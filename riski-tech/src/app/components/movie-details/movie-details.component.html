@@ -1,1 +1,7 @@
-<p>movie-details works!</p>
+<div class="container">
+    <div *ngIf="movie" class="movie">
+        <img src={{movie.poster_path}} alt="">
+        <h1>{{movie.title}}</h1>
+        <h1>{{movie.overview}}</h1>
+    </div>
+</div>

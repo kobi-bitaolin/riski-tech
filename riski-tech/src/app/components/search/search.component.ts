@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TheMovieDBService } from 'src/app/services/the-movie-db.service';
 import { Movie } from '../../models/movie';
+import { Router } from "@angular/router"
+
 
 @Component({
   selector: 'app-search',
@@ -10,7 +12,7 @@ import { Movie } from '../../models/movie';
 
 export class SearchComponent implements OnInit {
 
-  constructor(private theMovieDB: TheMovieDBService) { }
+  constructor(private theMovieDB: TheMovieDBService, private router: Router) { }
 
   movies: Movie[] = [];
 
@@ -35,31 +37,28 @@ export class SearchComponent implements OnInit {
   updateSearchHistory(query) {
     const oldInfo = JSON.parse(localStorage.getItem("history"));
     if (oldInfo) {
-      const currentDate = new Date();
-      const historyItem = {
-        query: query,
-        date: currentDate
-      }
-      //
-      const newInfo = [...oldInfo,historyItem]
-      localStorage.setItem("history", JSON.stringify(newInfo))
+      if (query) {
 
-    }else{
+        const currentDate = new Date();
+        const historyItem = {
+          query: query,
+          date: currentDate
+        }
+        const newInfo = [...oldInfo, historyItem]
+        localStorage.setItem("history", JSON.stringify(newInfo))
+      }
+
+    } else {
       localStorage.setItem("history", '[]')
     }
-
-   console.log(JSON.parse(localStorage.getItem("history")));
-   
-
+    console.log(JSON.parse(localStorage.getItem("history")));
 
   }
 
-  historyArrInit() {
-
-    
+  movieDetails(id: string) {
+    this.router.navigate(['/movie', id])
+    console.log(id);
 
   }
-
-
 
 }

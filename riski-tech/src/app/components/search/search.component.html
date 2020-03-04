@@ -4,7 +4,7 @@
         <button>Search</button>
     </form>
     <div *ngIf="movies">
-                <app-search-result *ngFor="let movie of movies" [movie]="movie"></app-search-result>   
+                <app-search-result (click)="movieDetails(movie.id)" *ngFor="let movie of movies" [movie]="movie"></app-search-result>   
     </div>
 
 </div>

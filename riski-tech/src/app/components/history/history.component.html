@@ -7,7 +7,7 @@
         <tbody>
             <tr *ngFor="let historyItem of searchHistory">
                 <td>{{historyItem.query}}</td>
-                <td>{{historyItem.date}}</td>
+                <td>{{historyItem.date | date:'short':'UTC +2'}}</td>
             </tr>
         </tbody>
     </table>

@@ -1,3 +1,7 @@
+.container{
+    cursor: pointer;
+}
+
 .image {
     width: 300px;
     /* height: ; */
