@@ -1,6 +1,6 @@
 <div class="container">
     <form #moviesForm="ngForm" (ngSubmit)="handleSubmit(moviesForm)">
-        <input type="text" placeholder="search..." name="query" ngModel #query="ngModel" required />
+        <input class="searchInput" type="text" placeholder="search..." name="query" ngModel #query="ngModel" required />
         <button>Search</button>
     </form>
     <div *ngIf="movies">
