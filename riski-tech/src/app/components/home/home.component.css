@@ -1,0 +1,32 @@
+.container{
+    background-image: url('https://cdn1.thr.com/sites/default/files/imagecache/landscape_928x523/2012/11/movie_theater_interior_a_l.jpg');
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 50px);
+    display: flex;
+}
+
+.welcom{
+    margin: auto auto;
+}
+
+h1{
+    color: white;
+    font-size: 50px;
+}
+
+button{
+   margin:0 auto;
+   display: block;
+   background-color: transparent;
+   color: white;
+   padding: 5px;
+   font-size: 25px;
+   border: 1px solid white;
+   cursor: pointer;
+  
+}
+
+button:hover{
+    background-color: red;
+}
