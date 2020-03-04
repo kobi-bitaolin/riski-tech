@@ -6,6 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { HistoryComponent } from './components/history/history.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
+import { HttpClientModule } from '@angular/common/http'
+import {FormsModule} from '@angular/forms'
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { SearchResultComponent } from './components/search-result/search-result.
     SearchResultComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
