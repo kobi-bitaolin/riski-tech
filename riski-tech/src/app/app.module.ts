@@ -8,8 +8,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { HistoryComponent } from './components/history/history.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
-import { HttpClientModule } from '@angular/common/http'
-import {FormsModule} from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';

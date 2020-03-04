@@ -19,12 +19,14 @@ export class SearchComponent implements OnInit {
   }
 
   handleSubmit(moviesForm) {
-    console.log("submit");
+    console.log('submit');
 
     const query: string = moviesForm.value.query;
 
     this.theMovieDB.getMovies(query)
       .subscribe(data => {
+        data.map(movie =>
+          movie.poster_path = 'https://image.tmdb.org/t/p/w500' + movie.poster_path)
         this.movies = data;
         this.updateSearchHistory(query)
       })
