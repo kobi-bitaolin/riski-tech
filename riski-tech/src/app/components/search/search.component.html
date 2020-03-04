@@ -4,10 +4,7 @@
         <button>Search</button>
     </form>
     <div *ngIf="movies">
-            <div *ngFor="let movie of movies">
-                <span>{{movie.id}}</span>
-                <span>{{movie.title}}</span>
-            </div>
+                <app-search-result *ngFor="let movie of movies" [movie]="movie"></app-search-result>   
     </div>
 
 </div>
