@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TheMovieDBService } from 'src/app/services/the-movie-db.service';
-import {Movie} from '../../models/movie';
+import { Movie } from '../../models/movie';
 
 @Component({
   selector: 'app-search',
@@ -12,10 +12,10 @@ export class SearchComponent implements OnInit {
 
   constructor(private theMovieDB: TheMovieDBService) { }
 
-  movies:Movie[]=[];
+  movies: Movie[] = [];
 
   ngOnInit(): void {
-
+    this.updateSearchHistory(null)
   }
 
   handleSubmit(moviesForm) {
@@ -26,8 +26,38 @@ export class SearchComponent implements OnInit {
     this.theMovieDB.getMovies(query)
       .subscribe(data => {
         this.movies = data;
-        console.log(data);
+        this.updateSearchHistory(query)
       })
   }
+
+  updateSearchHistory(query) {
+    const oldInfo = JSON.parse(localStorage.getItem("history"));
+    if (oldInfo) {
+      const currentDate = new Date();
+      const historyItem = {
+        query: query,
+        date: currentDate
+      }
+      //
+      const newInfo = [...oldInfo,historyItem]
+      localStorage.setItem("history", JSON.stringify(newInfo))
+
+    }else{
+      localStorage.setItem("history", '[]')
+    }
+
+   console.log(JSON.parse(localStorage.getItem("history")));
+   
+
+
+  }
+
+  historyArrInit() {
+
+    
+
+  }
+
+
 
 }

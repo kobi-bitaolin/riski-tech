@@ -1,1 +1,14 @@
-<p>history works!</p>
+<div class="container">
+    <table>
+        <thead>
+            <th>Search</th>
+            <th>Date</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let historyItem of searchHistory">
+                <td>{{historyItem.query}}</td>
+                <td>{{historyItem.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

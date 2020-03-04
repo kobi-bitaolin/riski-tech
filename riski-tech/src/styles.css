@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-a {
-    margin: 10px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body{
+    background-color: #f0f0f0;
 }

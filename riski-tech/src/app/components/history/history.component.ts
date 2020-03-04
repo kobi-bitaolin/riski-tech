@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
+  searchHistory: object[];
+
   constructor() { }
 
   ngOnInit(): void {
+    this.searchHistory = JSON.parse(localStorage.getItem("history"))
+    console.log(this.searchHistory);
+
   }
 
 }

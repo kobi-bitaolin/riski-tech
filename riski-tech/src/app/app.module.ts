@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http'
 import {FormsModule} from '@angular/forms'
 
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     SearchComponent,
     HistoryComponent,
     SearchResultComponent,
-    NavbarComponent
+    NavbarComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
