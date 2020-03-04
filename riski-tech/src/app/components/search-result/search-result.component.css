@@ -1,7 +1,26 @@
 .container{
     cursor: pointer;
+    border: 1px rgb(128, 128, 128,0.2) solid;  
 }
 
 .image {
-    width: 300px;
+    width: 200px;
+    border: 1px rgb(128, 128, 128,0.2) solid;  
+    
 }
+
+.image:hover {
+    transform: scale(1.2);
+    transition: 2s;
+}
+
+.p {
+    border: 1px rgba(82, 77, 77, 0.2) solid;
+    border-radius: 3px;
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+
+
