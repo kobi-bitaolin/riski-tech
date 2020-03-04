@@ -1,17 +1,13 @@
 <div class="container">
-    <form #movies="ngForm" (ngSubmit)="handleSubmit(movies)">
+    <form #moviesForm="ngForm" (ngSubmit)="handleSubmit(moviesForm)">
         <input type="text" placeholder="search..." name="query" ngModel #query="ngModel" required />
         <button>Search</button>
     </form>
-    <!-- <div *ngIf="movies.results">
-        <div>
-            hi
-            <div *ngFor="let movie of movies.results" class="item">
-                <li>{{movie.id}}</li>
-                <li>{{movie.title}}</li>
-                <li>{{movie.}}</li>
-            </div> 
-        </div> 
-    </div>-->
+    <div *ngIf="movies">
+            <div *ngFor="let movie of movies">
+                <span>{{movie.id}}</span>
+                <span>{{movie.title}}</span>
+            </div>
+    </div>
 
 </div>
